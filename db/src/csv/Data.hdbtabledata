@@ -1,0 +1,32 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "MY_BOOKSHOP_BOOKS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Books.csv",
+			"has_header": true
+		}
+	}, {
+		"target_table": "MY_BOOKSHOP_AUTHORS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Authors.csv",
+			"has_header": true
+		}
+	},{
+		"target_table": "MY_BOOKSHOP_PUBLISHERS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Publishers.csv",
+			"has_header": true
+		}
+	},{
+		"target_table": "MY_BOOKSHOP_AUTHORSPUBLISHERS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "AuthorsPublishers.csv",
+			"has_header": true
+		}
+	}]
+}

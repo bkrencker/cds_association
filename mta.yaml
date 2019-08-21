@@ -1,0 +1,29 @@
+ID: cds_assoc
+_schema-version: "2.1"
+version: 0.0.1
+modules:
+  - name: cds_assoc-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: cds_assoc-db-hdi-container
+  - name: cds_assoc-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: cds_assoc-db-hdi-container
+resources:
+  - name: cds_assoc-db-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
